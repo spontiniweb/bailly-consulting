@@ -36,17 +36,15 @@ export default function Header({ user }: HeaderProps) {
     <header className="h-16 bg-white border-b flex items-center justify-between px-6">
       <div />
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <button className="flex items-center gap-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <Avatar className="h-8 w-8">
-              <AvatarFallback className="bg-blue-100 text-blue-700 text-sm font-medium">
-                {getInitials(user.name, user.email)}
-              </AvatarFallback>
-            </Avatar>
-            <span className="text-sm font-medium text-gray-700 hidden sm:block">
-              {user.name ?? user.email}
-            </span>
-          </button>
+        <DropdownMenuTrigger className="flex items-center gap-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent border-0 cursor-pointer">
+          <Avatar className="h-8 w-8">
+            <AvatarFallback className="bg-blue-100 text-blue-700 text-sm font-medium">
+              {getInitials(user.name, user.email)}
+            </AvatarFallback>
+          </Avatar>
+          <span className="text-sm font-medium text-gray-700 hidden sm:block">
+            {user.name ?? user.email}
+          </span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">
           <div className="px-2 py-1.5">
